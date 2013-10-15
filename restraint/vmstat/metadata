@@ -1,0 +1,16 @@
+[General]
+name=/restraint/vmstat
+owner=Bill Peck <bpeck@redhat.com>
+description=just runs vmstat
+license=GPLv3
+confidential=no
+destructive=no
+
+[restraint]
+#entry_point=make run
+entry_point=./runtest.sh
+#entry_point=autotest-local control-file
+dependencies=lib-virt;httpd;postgresql;nfs-utils;net-tools;net-snmp;ethereal;wireshark;tcpdump;rusers;bzip2;gcc
+dependencies[RedHatEnterpriseLinuxServer5]=apache;mysql
+max_time=15m
+repoRequires=restraint/sanity/common
